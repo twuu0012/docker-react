@@ -1,8 +1,12 @@
 #super user permission
 sudo: required
+language: generic
 services:
   - docker #install docker
 
 before_install:
   # run commands before
-  - docker build -t tianlin976/docker-react -f Docker.dev .
+  - docker build -t tianlin976/docker-react -f Dockerfile.dev .
+
+script:
+  - docker run -e CI=true tianlin976/docker-react npm run test
