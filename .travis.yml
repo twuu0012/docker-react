@@ -1,0 +1,8 @@
+#super user permission
+sudo: required
+services:
+  - docker #install docker
+
+before_install:
+  # run commands before
+  - docker build -t tianlin976/docker-react -f Docker.dev .
